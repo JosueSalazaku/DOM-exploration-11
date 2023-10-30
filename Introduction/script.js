@@ -1,6 +1,21 @@
 // const domExploration = document.querySelector("");
-let displayDocument = document.querySelector("body");
+const displayDocument = document.getElementsByTagName("body");
 
-document.body.style.backgroundColor = "#FF69B4";
+function randomColor() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  console.log(bgColor);
 
-console.log(displayDocument);
+  document.body.style.background = bgColor;
+}
+randomColor();
+
+// const getChilderen = document.body.children[1];
+
+// for (const child of getChilderen.children) {
+//   console.log(child);
+// }
+
+// console.log(body);
