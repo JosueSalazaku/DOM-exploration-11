@@ -15,3 +15,10 @@ for (let allParagraph of allParagraphs) {
     console.log("Class:", allParagraph.classList[0]);
   }
 }
+
+for (let allParagraph of allParagraphs) {
+  if (!allParagraph.classList.length) {
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    allParagraph.style.color = randomColor;
+  }
+}
