@@ -15,7 +15,7 @@ function randomColor() {
 }
 randomColor();
 
-const getChildren = document.body.children[1];
+const getChildren = document.body.children[0];
 
 for (const child of getChildren.children) {
   console.log(child);

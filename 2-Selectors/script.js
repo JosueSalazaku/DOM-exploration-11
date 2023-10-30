@@ -1,5 +1,5 @@
-let allImg = document.getElementsByTagName("img");
-let allParagraphs = document.getElementsByTagName("p");
+let allImg = document.querySelectorAll("img");
+let allParagraphs = document.querySelectorAll("p");
 
 for (let i = 0; i < allImg.length; i++) {
   if (!allImg[i].classList.contains("important")) {
