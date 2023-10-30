@@ -1,4 +1,4 @@
 // const domExploration = document.querySelector("");
-let displayDocument = document.title;
+let displayDocument = document.querySelector("title");
 
-console.log(document.title);
+console.log(displayDocument);
