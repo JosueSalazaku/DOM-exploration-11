@@ -8,4 +8,10 @@ for (let i = 0; i < allImg.length; i++) {
   }
 }
 
-for (let i = 0; i < allParagraphs.length; i++) {}
+for (let allParagraph of allParagraphs) {
+  console.log("Content:", allParagraph.textContent);
+
+  if (allParagraph.classList.length > 0) {
+    console.log("Class:", allParagraph.classList[0]);
+  }
+}
