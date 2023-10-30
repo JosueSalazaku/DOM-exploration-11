@@ -1,5 +1,8 @@
 // const domExploration = document.querySelector("");
-const displayDocument = document.getElementsByTagName("html");
+const displayDocument = document.getElementsByTagName("body");
+
+document.title = "Modifying the DOM";
+console.log(document.title);
 
 function randomColor() {
   let x = Math.floor(Math.random() * 256);
@@ -12,10 +15,9 @@ function randomColor() {
 }
 randomColor();
 
-const getChilderen = document.html.children[0];
+const getChildren = document.body.children[1];
 
-for (const child of getChilderen.children) {
+for (const child of getChildren.children) {
   console.log(child);
+  console.log(getChildren);
 }
-
-console.log(body);
