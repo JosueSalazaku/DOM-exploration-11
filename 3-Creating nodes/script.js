@@ -1,5 +1,5 @@
-const modifyArticle = document.querySelector("article");
-const groups = [
+const article = document.querySelector("article");
+let groups = [
 	"Lucas",
 	"Kilian",
 	"Alec",
@@ -40,7 +40,7 @@ for (const group of groups) {
 	paragraph.textContent = group;
 
 	section.appendChild(paragraph);
-	modifyArticle.appendChild(section);
+	article.appendChild(section);
 }
 
 function getRandomOrder() {
@@ -54,11 +54,12 @@ function getContrastColor(hexColor) {
 	const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
 	return brightness > 128 ? "#000000" : "#FFFFFF";
+	console.log(getRandomColor());
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	const modifyArticle = document.querySelector("article");
-	const sections = Array.from(modifyArticle.querySelectorAll("section"));
+	const article = document.querySelector("article");
+	const sections = Array.from(article.querySelectorAll("section"));
 
 	sections.sort(getRandomOrder);
 
@@ -67,6 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			getComputedStyle(section).getPropertyValue("background-color");
 		const contrastColor = getContrastColor(bgColor);
 		section.style.color = contrastColor;
-		modifyArticle.appendChild(section);
+		article.appendChild(section);
 	});
 });
