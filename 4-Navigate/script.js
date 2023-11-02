@@ -17,4 +17,6 @@ section3.appendChild(h2InSection2);
 // console.log(section2.children[0]);
 
 const lastSection = document.querySelector("section:last-child");
-lastSection.remove();
+lastSection.parentElement.removeChild(lastSection);
+
+console.log(lastSection);
