@@ -1,17 +1,34 @@
 const _initTime = Date.now();
-const newDiv = document.createElement("div");
-const displayeSquareWrapper = document.querySelector("displayedsquare-wrapper");
-newDiv.classList.add("displayeSquare");
+
+function createDisplayedSquare() {
+	const newDiv = document.createElement("div");
+	newDiv.classList.add("displayedsquare");
+	newDiv.style.backgroundColor = color;
+
+	document.querySelector(".displayedsquare-wrapper").appendChild(newDiv);
+
+	const newLog = document.createElement("li");
+	newLog.textContent = "Action done at " + getElapsedTime();
+	loglist.appendChild(newLog);
+}
 
 const loglist = document.querySelector("ul");
-const newLog = document.createElement("li");
 
 document.body.addEventListener("keypress", function (event) {
-	if (event.keyCode === 32) {
+	if (event.key === " ") {
 		const randomColor =
 			"#" + Math.floor(Math.random() * 16777215).toString(16);
 		document.body.style.backgroundColor = randomColor;
 		console.log(randomColor);
+		// Log when the spacebar is used the same way you used for the generated squares.
+
+		const newLog = document.createElement("li");
+		newLog.textContent = "Spacebar pressed at " + getElapsedTime();
+		loglist.appendChild(newLog);
+	} else if (event.key == "1") {
+		while (loglist.firstChild) {
+			loglist.removeChild(loglist.firstChild);
+		}
 	}
 });
 
