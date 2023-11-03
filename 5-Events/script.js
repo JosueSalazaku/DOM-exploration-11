@@ -18,7 +18,7 @@ function createDisplayedSquare(color) {
 	newLog.textContent = "Clicked at " + getElapsedTime();
 	loglist.appendChild(newLog);
 	newDiv.addEventListener("click", function () {
-		alert("this square is" + color[color]);
+		alert("this square is " + colors[color]);
 	});
 }
 
