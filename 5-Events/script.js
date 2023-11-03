@@ -1,9 +1,9 @@
 const _initTime = Date.now();
 
 const colors = {
-	green: "rgb(0, 255, 0)",
-	violet: "rgb(255, 0, 255)",
-	orange: "rgb(255, 165, 0)",
+	green: "lime",
+	violet: "magenta",
+	orange: "orange",
 };
 
 function createDisplayedSquare(color) {
