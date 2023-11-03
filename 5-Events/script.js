@@ -12,9 +12,14 @@ function createDisplayedSquare(color) {
 	newDiv.style.backgroundColor = colors[color];
 	document.querySelector(".displayedsquare-wrapper").appendChild(newDiv);
 
+	newDiv;
+
 	const newLog = document.createElement("li");
 	newLog.textContent = "Clicked at " + getElapsedTime();
 	loglist.appendChild(newLog);
+	newDiv.addEventListener("click", function () {
+		alert("this square is" + color[color]);
+	});
 }
 
 const loglist = document.querySelector("ul");
@@ -29,7 +34,7 @@ document.body.addEventListener("keypress", function (event) {
 		const newLog = document.createElement("li");
 		newLog.textContent = "Spacebar pressed at " + getElapsedTime();
 		loglist.appendChild(newLog);
-	} else if (event.key == "1") {
+	} else if (event.key == "l") {
 		while (loglist.firstChild) {
 			loglist.removeChild(loglist.firstChild);
 		}
