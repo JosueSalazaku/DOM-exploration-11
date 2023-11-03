@@ -1,14 +1,19 @@
 const _initTime = Date.now();
 
-function createDisplayedSquare() {
+const colors = {
+	green: "rgb(0, 255, 0)",
+	violet: "rgb(255, 0, 255)",
+	orange: "rgb(255, 165, 0)",
+};
+
+function createDisplayedSquare(color) {
 	const newDiv = document.createElement("div");
 	newDiv.classList.add("displayedsquare");
-	newDiv.style.backgroundColor = "color";
-
+	newDiv.style.backgroundColor = colors[color];
 	document.querySelector(".displayedsquare-wrapper").appendChild(newDiv);
 
 	const newLog = document.createElement("li");
-	newLog.textContent = "Action done at " + getElapsedTime();
+	newLog.textContent = "Clicked at " + getElapsedTime();
 	loglist.appendChild(newLog);
 }
 
