@@ -1,10 +1,3 @@
-/* 
-Well this is a common one. Add a keyup listener on both fields and show a visual hint (for instance
-turn the field red) if the password is too short (less than 6 characters) or if the password and its confirmation do not match.
-
-Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use,
-we'll say that the dark mode is just turning the background black and the text white. */
-
 const firstName = document.getElementById("firstname");
 const displayFirstname = document.getElementById("display-firstname");
 
@@ -30,9 +23,6 @@ numbers.forEach(function (input) {
 const password = document.getElementById("pwd");
 const pwdConfirm = document.getElementById("pwd-confirm");
 
-console.log(password);
-console.log(pwdConfirm);
-
 password.addEventListener("keyup", function () {
 	const passwordValue = this.value;
 
@@ -53,3 +43,21 @@ pwdConfirm.addEventListener("keyup", function () {
 		this.style.border = "1px solid black";
 	}
 });
+
+/* 
+Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use,
+we'll say that the dark mode is just turning the background black and the text white. */
+
+const darkMode = document.getElementById("toggle-darkmode");
+const body = document.body;
+const otherEelements = document.querySelectorAll("*");
+
+darkMode.addEventListener("change", function () {
+	if (darkMode.click) {
+		document.body.style.backgroundColor = "rgb(0, 0, 0)";
+	} else {
+		document.body.style.backgroundColor = "";
+	}
+});
+
+console.log(darkMode);
