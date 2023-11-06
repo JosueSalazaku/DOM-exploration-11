@@ -47,12 +47,13 @@ pwdConfirm.addEventListener("keyup", function () {
 /* Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use,
 we'll say that the dark mode is just turning the background black and the text white. */
 
-const darkMode = document.getElementById("toggle-darkmode");
 const body = document.body;
-const otherEelements = document.querySelectorAll("*");
+const darkMode = document.getElementById("toggle-darkmode");
 
 darkMode.addEventListener("change", function () {
-	if (darkMode.click) {
+	const selectedMode = darkMode.value;
+
+	if (selectedMode === "dark") {
 		document.body.style.backgroundColor = "rgb(0, 0, 0)";
 		document
 			.querySelectorAll("p, h1, h2, input, span")
@@ -60,16 +61,11 @@ darkMode.addEventListener("change", function () {
 				element.style.color = "rgb(255, 255, 255)";
 			});
 	} else {
-		document.body.style.backgroundColor = "rgb(255, 255, 255)";
-		document.body.style.backgroundColor = "rgb(255, 255, 255)";
-		document.querySelectorAll("p, h1, input, span").forEach((element) => {
-			element.style.color = "rgb(0, 0, 0)";
-		});
+		document.body.style.backgroundColor = "";
+		document
+			.querySelectorAll("p, h1, h2, input, span")
+			.forEach((element) => {
+				element.style.color = "";
+			});
 	}
-
-	// if (darkMode.click) {
-	// 	otherEelements.style = "rgb(255, 255, 255)";
-	// }
 });
-
-console.log(otherEelements);
