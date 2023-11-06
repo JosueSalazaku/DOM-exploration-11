@@ -13,9 +13,9 @@ const hardTruth = document.getElementById("a-hard-truth");
 numbers.forEach(function (input) {
 	input.addEventListener("keyup", function () {
 		if (age.value < 18) {
-			hardTruth.style.display = "none";
+			hardTruth.style.visibility = "none";
 		} else {
-			hardTruth.style.display = "block";
+			hardTruth.style.visibility = "hidden";
 		}
 	});
 });
@@ -44,8 +44,7 @@ pwdConfirm.addEventListener("keyup", function () {
 	}
 });
 
-/* 
-Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use,
+/* Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use,
 we'll say that the dark mode is just turning the background black and the text white. */
 
 const darkMode = document.getElementById("toggle-darkmode");
@@ -55,9 +54,22 @@ const otherEelements = document.querySelectorAll("*");
 darkMode.addEventListener("change", function () {
 	if (darkMode.click) {
 		document.body.style.backgroundColor = "rgb(0, 0, 0)";
+		document
+			.querySelectorAll("p, h1, h2, input, span")
+			.forEach((element) => {
+				element.style.color = "rgb(255, 255, 255)";
+			});
 	} else {
-		document.body.style.backgroundColor = "";
+		document.body.style.backgroundColor = "rgb(255, 255, 255)";
+		document.body.style.backgroundColor = "rgb(255, 255, 255)";
+		document.querySelectorAll("p, h1, input, span").forEach((element) => {
+			element.style.color = "rgb(0, 0, 0)";
+		});
 	}
+
+	// if (darkMode.click) {
+	// 	otherEelements.style = "rgb(255, 255, 255)";
+	// }
 });
 
-console.log(darkMode);
+console.log(otherEelements);
