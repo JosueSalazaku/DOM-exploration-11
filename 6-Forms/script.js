@@ -1,9 +1,4 @@
-/* Add a keyup listener on the first input field, so that once you type a letter in this field,
- it goes into the <span id="display-firstname">. The content of the field and the span should always remain the same.
- * 
-Add a keyup listener on the second input (the number input), so that if the age is below 18 the content
-of the section a-hard-truth remains hidden, otherwise show them this hard to swallow fact.
-
+/* 
 Well this is a common one. Add a keyup listener on both fields and show a visual hint (for instance
 turn the field red) if the password is too short (less than 6 characters) or if the password and its confirmation do not match.
 
@@ -30,4 +25,31 @@ numbers.forEach(function (input) {
 			hardTruth.style.display = "block";
 		}
 	});
+});
+
+const password = document.getElementById("pwd");
+const pwdConfirm = document.getElementById("pwd-confirm");
+
+console.log(password);
+console.log(pwdConfirm);
+
+password.addEventListener("keyup", function () {
+	const passwordValue = this.value;
+
+	if (passwordValue.length < 6) {
+		this.style.border = "2px solid red";
+	} else {
+		this.style.border = "1px solid black";
+	}
+});
+
+pwdConfirm.addEventListener("keyup", function () {
+	const pwdConfirmValue = this.value;
+	const passwordValue = password.value;
+
+	if (pwdConfirmValue !== passwordValue || passwordValue.length < 6) {
+		this.style.border = "2px solid red";
+	} else {
+		this.style.border = "1px solid black";
+	}
 });
