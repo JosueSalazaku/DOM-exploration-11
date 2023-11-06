@@ -18,4 +18,16 @@ firstName.addEventListener("keyup", function () {
 	displayFirstname.textContent = inputText;
 });
 
-console.log(firstName);
+const numbers = document.querySelectorAll('input[type="number"]');
+const age = document.getElementById("age");
+const hardTruth = document.getElementById("a-hard-truth");
+
+numbers.forEach(function (input) {
+	input.addEventListener("keyup", function () {
+		if (age.value < 18) {
+			hardTruth.style.display = "none";
+		} else {
+			hardTruth.style.display = "block";
+		}
+	});
+});
