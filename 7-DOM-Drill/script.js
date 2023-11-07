@@ -24,6 +24,7 @@ sorted in a random order, however Fast and Furious should remain the first eleme
  * have the class .important. (hint: you can toggle visibility using element.style.visibility = 'hidden') */
 
 const lists = document.querySelector("ul");
+const fastFurius = lists.children[5];
 
 for (let i = 0; i < lists.childNodes.length; i++) {
 	const listNode = lists.childNodes[i];
@@ -33,4 +34,7 @@ for (let i = 0; i < lists.childNodes.length; i++) {
 	}
 }
 
-console.log(lists.children[5]);
+lists.insertBefore(fastFurius, lists.firstChild);
+fastFurius.classList.add("important");
+
+console.log(lists.children);
