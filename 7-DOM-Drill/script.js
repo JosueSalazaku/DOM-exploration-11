@@ -25,6 +25,7 @@ sorted in a random order, however Fast and Furious should remain the first eleme
 
 const lists = document.querySelector("ul");
 const fastFurius = lists.children[5];
+const li = document.querySelectorAll("li");
 
 for (let i = 0; i < lists.childNodes.length; i++) {
 	const listNode = lists.childNodes[i];
@@ -37,4 +38,8 @@ for (let i = 0; i < lists.childNodes.length; i++) {
 lists.insertBefore(fastFurius, lists.firstChild);
 fastFurius.classList.add("important");
 
-console.log(lists.children);
+li.forEach((li, i) => {
+	li.addEventListener("click", function () {
+		alert(li.textContent);
+	});
+});
