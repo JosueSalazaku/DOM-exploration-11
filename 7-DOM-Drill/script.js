@@ -40,6 +40,14 @@ fastFurius.classList.add("important");
 
 li.forEach((li, i) => {
 	li.addEventListener("click", function () {
-		alert(li.textContent);
+		if (li == fastFurius) {
+			alert(
+				"The most important franchise ever, the story of DOM(inic) Toretto's family. It's not about car, it's about family."
+			);
+		} else {
+			alert(li.textContent);
+		}
 	});
 });
+
+console.log(li);
