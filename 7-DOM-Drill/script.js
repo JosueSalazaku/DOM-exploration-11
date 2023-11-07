@@ -25,7 +25,12 @@ sorted in a random order, however Fast and Furious should remain the first eleme
 
 const lists = document.querySelector("ul");
 
-for (let i = 0; i < lists.length; i++) {
-	const list = lists[1];
+for (let i = 0; i < lists.childNodes.length; i++) {
+	const listNode = lists.childNodes[i];
+
+	if (listNode.nodeType === Node.ELEMENT_NODE) {
+		console.log("Element Node:", listNode);
+	}
 }
-console.log(lists.textContent);
+
+console.log(lists.children[5]);
